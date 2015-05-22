@@ -108,9 +108,17 @@ public class MorososMatricula extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 		
 		int numCols = table.getModel().getColumnCount();
+		/**
+		 * se instancia un arreglo de objetos orm.estudianets para igualarlo al método 
+		 * obtenerListMorososMatricula para que retorne toda la lista con estudiantes morosos
+		 */
 		orm.Estudiante[] est = Matricula.obtenerListMorososMatricula();
 		Object [] fila = new Object[numCols]; fila[0] = "unal";
 		
+		/**
+		 * se recorre el arreglo con los estudantes morosos y se van agregando sus calores en
+		 * las filas de la ventana
+		 */
 		for (int i = 0; i < est.length; i++) {
 		fila[0] = est[i].getPersona().getNombre();
 		fila[1] = est[i].getPersona().getApellido();
