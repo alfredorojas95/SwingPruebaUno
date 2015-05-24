@@ -148,7 +148,7 @@ public class CrearCurso extends JFrame {
 				 * se obtiene los valores de los texfiel y se le asignan a variables
 				 * locales
 				 */
-				int codigo = Integer.parseInt(textCod.getText());
+				String codigo = textCod.getText();
 				String nombreCurso = TextNom.getText();
 				String rutProf = textRut.getText();
 				/**
@@ -157,8 +157,9 @@ public class CrearCurso extends JFrame {
 				if ((textCod.getText().trim().length() != 0)
 						&& (TextNom.getText().trim().length() != 0)
 						&& (textRut.getText().trim().length() != 0)) {
+					int aux =Integer.parseInt(textCod.getText());
 					//se llama al método asignarProfesor
-					String resultado2 = Curso.asignarProfesor(codigo,
+					String resultado2 = Curso.asignarProfesor(aux,
 							nombreCurso, rutProf, "115749802");
 					// se setea el valor del laber para que indique si se creó el curso o no
 					labelAsignar.setText(resultado2);
